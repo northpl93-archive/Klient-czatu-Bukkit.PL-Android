@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Czat Bukkit.PL</string>
+    <string name="login">Zaloguj się</string>
+    <string name="username">Nazwa użytkownika</string>
+    <string name="password">Hasło</string>
+    <string name="title_activity_login">Zaloguj się do Bukkit.PL</string>
+
+</resources>
