@@ -9,34 +9,42 @@
     tools:context="tk.northpl.klientczatubukkitpl.MainActivity" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/messageToSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:ems="10" >
+        android:ems="10"
+        android:inputType="text" >
 
-        <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/messageSendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText1"
-        android:layout_toRightOf="@+id/editText1"
-        android:onClick="sendMessage"
+        android:layout_alignBottom="@+id/messageToSend"
+        android:layout_alignParentRight="true"
         android:text="Button" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText1"
+    <ScrollView
+        android:id="@+id/messagesScroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/messageSendButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button1"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/messages"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/app_name"
+            android:maxLines="1000000"
+            android:singleLine="false" >
+        
+        </TextView>
+    </ScrollView>
 
 </RelativeLayout>

@@ -9,7 +9,7 @@
     tools:context="tk.northpl.klientczatubukkitpl.LoginActivity" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/loginBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -31,23 +31,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/passwordBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/loginBox"
+        android:layout_alignRight="@+id/loginBox"
+        android:layout_below="@+id/loginBox"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/passwordBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="69dp"
+        android:onClick="login"
         android:text="@string/login" />
 
 </RelativeLayout>
