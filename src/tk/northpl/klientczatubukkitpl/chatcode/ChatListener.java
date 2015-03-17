@@ -1,5 +1,7 @@
 package tk.northpl.klientczatubukkitpl.chatcode;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,6 +15,9 @@ import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatListener extends IntentService
 {
@@ -59,16 +64,16 @@ public class ChatListener extends IntentService
 	@Override
 	protected void onHandleIntent(Intent intent)
 	{
-		System.out.println("ChatListener -> onHandleIntent");
 		gson = new Gson();
 
 		while (true)
 		{
-			rawData = "_xfToken=" + LoginActivity.xentoken + "&" + "lastrefresh="
-					+ latestMessage;
+			List<NameValuePair> params = new ArrayList<NameValuePair>(15);
+			params.add(new BasicNameValuePair("_xfToken", LoginActivity.xentoken));
+			params.add(new BasicNameValuePair("lastrefresh", String.valueOf(latestMessage)));
 
 			lol = PostExecute.excutePost(
-					"http://bukkit.pl/index.php/taigachat/list.json", rawData);
+					"http://bukkit.pl/index.php/taigachat/list.json", params);
 
 			if (lol == null) // Błąd z pobieraniem zawartości
 			{

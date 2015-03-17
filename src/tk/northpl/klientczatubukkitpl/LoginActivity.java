@@ -4,6 +4,7 @@ import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 
+import tk.northpl.klientczatubukkitpl.utils.PostExecute;
 import tk.northpl.klientczatubukkitpl.utils.XenForoUtils;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -34,9 +35,7 @@ public class LoginActivity extends Activity
 		loginField = (EditText) findViewById(R.id.loginBox);
 		passwordField = (EditText) findViewById(R.id.passwordBox);
 
-		cookieHandler = new CookieManager();
-		cookieHandler.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-		CookieHandler.setDefault(cookieHandler);
+		PostExecute.setupClient();
 	}
 
 	@Override

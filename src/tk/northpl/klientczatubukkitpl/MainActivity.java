@@ -89,13 +89,7 @@ public class MainActivity extends Activity
 
 	public void sendmsg()
 	{
-		System.out
-				.println("[Klient czatu bukkit.pl] Rozpoczeto wysylanie wiadomosci: "
-						+ message.getText());
 		new MessageSendTask().execute(message.getText().toString());
-		System.out.println("= = = = = =");
-		System.out.println(LoginActivity.xentoken);
-		System.out.println("= = = = = =");
 		message.setText("");
 	}
 
@@ -130,8 +124,7 @@ public class MainActivity extends Activity
 		@Override
 		public void onReceive(Context context, Intent intent)
 		{
-			Bundle bundle = intent.getExtras();
-			appendMessage(bundle.getString(ChatListener.Constants.MESSAGE_TEXT));
+			appendMessage(intent.getExtras().getString(ChatListener.Constants.MESSAGE_TEXT));
 		}
 	}
 
